@@ -10,5 +10,8 @@ java-tool封装了常用java工具类，使用它可以高效开发代码，并�
 - win10 OS
 
 ### 已封装的工具类
-- CSVTool => 读写CSV文件内容
+- CSVUtil => 读写CSV文件内容
+- UnpackUtil => 解压工具类，包括对zip、rar、tar、tra.gz格式的解压
+- CompressUtil => 压缩工具类，包括对zip、tar、tar.gz格式的压缩
+- PropertiesUtil => 对象拷贝工具类
 

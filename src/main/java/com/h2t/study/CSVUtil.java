@@ -15,7 +15,7 @@ import java.util.List;
  * @version 1.0
  * @Date 2019/09/02 14:11
  */
-public class CSVTool<T> {
+public class CSVUtil<T> {
     /**
      * Read from CSV
      *
