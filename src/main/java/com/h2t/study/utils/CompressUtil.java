@@ -1,4 +1,4 @@
-package com.h2t.study;
+package com.h2t.study.utils;
 
 import com.h2t.study.enums.FileTypeEnum;
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;

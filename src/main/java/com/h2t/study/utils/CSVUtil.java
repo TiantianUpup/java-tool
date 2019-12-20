@@ -1,4 +1,4 @@
-package com.h2t.study;
+package com.h2t.study.utils;
 
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;

@@ -1,4 +1,4 @@
-package com.h2t.study;
+package com.h2t.study.utils;
 
 import com.github.junrar.Archive;
 import com.github.junrar.exception.RarException;
