@@ -3,8 +3,8 @@ package com.h2t.study.enums;
 /**
  * 压缩文件格式
  *
- * @version 1.0
  * @author: hetiantian
+ * @version 1.0
  * @date: 2019/12/12 15:37
  */
 public enum FileTypeEnum {

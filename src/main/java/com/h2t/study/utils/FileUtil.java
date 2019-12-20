@@ -11,9 +11,8 @@ import java.util.List;
 /**
  * 文件处理工具类
  *
- * @version 1.0
- * @Address: http://www.hikvision.com
  * @author: hetiantian
+ * @version 1.0
  * @date: 2019/12/12 11:14
  */
 public class FileUtil {
