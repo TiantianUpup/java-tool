@@ -32,13 +32,13 @@ public class UnpackUtil {
      * @param targetPath 解压路径
      */
     public static void unpackZip(String sourcePath, String targetPath) {
-        File sourceFile = FileUtil.validateSourcePath(sourcePath);
-        unpackZip(sourceFile, targetPath);
+        FileUtil.validatePath(sourcePath);
+        unpackZip(new File(sourcePath), targetPath);
     }
 
     public static void unpackZip(File sourceFile, String targetPath) {
         //校验解压地址是否存在
-        FileUtil.validateTargetPath(targetPath);
+        FileUtil.validatePath(targetPath);
 
         LOGGER.info("start to unpack zip file, file name:{}", sourceFile.getName());
         long start = System.currentTimeMillis();
@@ -85,13 +85,13 @@ public class UnpackUtil {
      * @param targetPath 解压路径
      */
     public static void unpackRar(String sourcePath, String targetPath) {
-        File sourceFile = FileUtil.validateSourcePath(sourcePath);
-        unpackRar(sourceFile, targetPath);
+        FileUtil.validatePath(sourcePath);
+        unpackRar(new File(sourcePath), targetPath);
     }
 
     public static void unpackRar(File sourceFile, String targetPath) {
         //校验解压地址是否存在
-        FileUtil.validateTargetPath(targetPath);
+        FileUtil.validatePath(targetPath);
 
         LOGGER.info("start to unpack rar file, file name:{}", sourceFile.getName());
         long start = System.currentTimeMillis();
@@ -134,13 +134,13 @@ public class UnpackUtil {
      * @return 解压出的tar文件的绝对路径
      */
     public static String unpackGz(String sourcePath, String targetPath) {
-        File sourceFile = FileUtil.validateSourcePath(sourcePath);
-        return unpackGz(sourceFile, targetPath);
+        FileUtil.validatePath(sourcePath);
+        return unpackGz(new File(sourcePath), targetPath);
     }
 
     public static String unpackGz(File sourceFile, String targetPath) {
         //校验解压地址是否存在
-        FileUtil.validateTargetPath(targetPath);
+        FileUtil.validatePath(targetPath);
 
         File rarFile = new File(targetPath,
                 String.format("%s.%s", sourceFile.getName().split("\\.")[0], "tar"));
@@ -177,13 +177,13 @@ public class UnpackUtil {
      * @param targetPath 解压文件路径
      */
     public static void unpackTar(String sourcePath, String targetPath) {
-        File sourceFile = FileUtil.validateSourcePath(sourcePath);
-        unpackTar(sourceFile, targetPath);
+        FileUtil.validatePath(sourcePath);
+        unpackTar(new File(sourcePath), targetPath);
     }
 
     public static void unpackTar(File sourceFile, String targetPath) {
         //校验解压地址是否存在
-        FileUtil.validateTargetPath(targetPath);
+        FileUtil.validatePath(targetPath);
 
         LOGGER.info("start to unpack tar file, file name:{}", sourceFile.getName());
         long start = System.currentTimeMillis();
