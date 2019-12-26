@@ -31,8 +31,8 @@ public class CompressUtil {
      * @param targetPath 压缩文件保存地址
      */
     public static void compressToZip(String sourcePath, String targetPath) {
-        File sourceFile = FileUtil.validateSourcePath(sourcePath);
-        compressToZip(sourceFile, targetPath);
+        FileUtil.validatePath(sourcePath);
+        compressToZip(new File(sourcePath), targetPath);
     }
 
     /**
@@ -42,7 +42,7 @@ public class CompressUtil {
      * @param targetPath 压缩文件保存地址
      */
     public static void compressToZip(File sourceFile, String targetPath) {
-        FileUtil.validateTargetPath(targetPath);
+        FileUtil.validatePath(targetPath);
         //输入文件路径包含文件名
         File targetFile = new File(String.format("%s%s%s.%s", targetPath, File.separator, sourceFile.getName(), FileTypeEnum.ZIP.getTypeName()));
 
@@ -152,8 +152,8 @@ public class CompressUtil {
      * @param targetPath 压缩文件保存地址
      */
     public static void compressTarToGz(String sourcePath, String targetPath) {
-        File sourceFile = FileUtil.validateSourcePath(sourcePath);
-        compressTarToGz(sourceFile, targetPath);
+        FileUtil.validatePath(sourcePath);
+        compressTarToGz(new File(sourcePath), targetPath);
     }
 
     /**
@@ -164,7 +164,7 @@ public class CompressUtil {
      */
     public static void compressTarToGz(File sourceFile, String targetPath) {
         //校验解压路径是否存在
-        FileUtil.validateTargetPath(targetPath);
+        FileUtil.validatePath(targetPath);
         LOGGER.info("start to compress tar file to tar.gz, file name:{}", sourceFile.getName());
         long start = System.currentTimeMillis();
         try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(sourceFile))) {
@@ -193,9 +193,10 @@ public class CompressUtil {
      * @return tar压缩文件路径
      */
     public static String compressToTar(String sourcePath, String targetPath) {
-        File sourceFile = FileUtil.validateSourcePath(sourcePath);
+        FileUtil.validatePath(sourcePath);
+        File sourceFile = new File(sourcePath);
         //校验解压路径是否存在
-        FileUtil.validateTargetPath(targetPath);
+        FileUtil.validatePath(targetPath);
 
         File tarFile = new File(targetPath, String.format("%s.%s", sourceFile.getName(), FileTypeEnum.TAR.getTypeName()));
         LOGGER.info("start compress file to tar, file name:{}, cost:{} ms", sourceFile.getName());
